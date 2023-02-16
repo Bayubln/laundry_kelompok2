@@ -3,6 +3,14 @@ include_once '../template/header.php';
 include_once '../template/sidebar.php'; 
 include_once '../template/topbar.php'; 
 ?>
+
+<?php 
+
+include_once '../../controllers/c_pengguna.php';
+
+$pengguna = new c_pengguna();
+
+?>
         <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
@@ -50,31 +58,36 @@ include_once '../template/topbar.php';
                     <table class="table">
                       <thead>
                         <tr>
-                          <th>#</th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
+                          <th>No</th>
+                          <th>Nama</th>
                           <th>Username</th>
+                          <th>id_outlet</th>
+                          <th>Role</th>
+                          <th><center>Aksi</center></th>
                         </tr>
                       </thead>
                       <tbody>
+
+                        <?php 
+                        $no = 1;
+                        foreach ($pengguna->tampil() as $o) {  ?>
                         <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
+                          <th scope="row"><?= $no++ ?></th>
+                          <td><?= $o->nama ?></td>
+                          <td><?= $o->username ?></td>
+                          <td><?= $o->password ?></td>
+                          <td><?= $o->id_outlet ?></td>
+                          <td><?= $o->role ?></td>
+                          <td>
+                            <center>
+                            <a href="v_edit_outlet.php?id=<?= $o->id ?>"><button type="button" class="btn btn-round btn-primary">Edit</button></a>
+                            
+                            <a onclick="return confirm('Apakah yakin data akan di hapus?')" href="../../routers/r_pengguna.php?id=<?= $o->id ?>&aksi=hapus"><button type="button" name="hapus" class="btn btn-round btn-danger">Hapus</button></a>
+                            </center>
+                          </td>
                         </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
+                        <?php } ?>
+
                       </tbody>
                     </table>
 
@@ -89,3 +102,4 @@ include_once '../template/topbar.php';
         <!-- /page content -->
 
 <?php include_once '../template/footer.php';?>
+
