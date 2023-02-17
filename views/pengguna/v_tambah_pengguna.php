@@ -27,39 +27,48 @@ include_once '../template/topbar.php';
 								</div>
 								<div class="x_content">
 									<br />
+									<form action="../../routers/r_pengguna.php?aksi=tambah" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 									<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="Nama Pengguna">Nama Pengguna <span class="required"></span>
-											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="Nama Pengguna" required="required" class="form-control ">
+												<input type="text" name="id" class="form-control" hidden>
 											</div>
 										</div>
 										<div class="item form-group">
-											<label for="username" class="col-form-label col-md-3 col-sm-3 label-align">Username</label>
+											<label for="nama" class="col-form-label col-md-3 col-sm-3 label-align">Nama Pengguna</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input id="username" class="form-control" type="text" name="username">
+												<input id="nama" class="form-control" type="text" name="nama">
+											</div>
+										</div>
+										<div class="item form-group">
+											<label for="" class="col-form-label col-md-3 col-sm-3 label-align">Username</label>
+											<div class="col-md-6 col-sm-6 ">
+												<input id="" class="form-control" type="text" name="username">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="password" class="col-form-label col-md-3 col-sm-3 label-align">Password</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input id="password" class="form-control" type="password" name="password">
+												<input id="" class="form-control" type="password" name="password">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="id_outlet" class="col-form-label col-md-3 col-sm-3 label-align">Id Outlet</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input id="id_outlet" class="form-control" type="text" name="id_outlet">
+												<input id="" class="form-control" type="text" name="id_outlet">
 											</div>
 										</div>
-										<div class="item form-group">
-											<label for="role" class="col-form-label col-md-3 col-sm-3 label-align">Role</label>
-											<div class="col-md-6 col-sm-6 ">
-												<input id="role" class="form-control" type="text" name="role">
-											</div>
-										</div>
+										<div class="form-group">
+                    <label>Role</label>
+                    <select name="role" class="form-control">
+                        <?php foreach ($role as $key): ?>
+                            <?php if ($key == $edit['role']): ?>
+                            <option value="<?= $key ?>" selected><?= $key ?></option>    
+                            <?php endif ?>
+                            <option value="<?= $key ?>"><?= ucfirst($key) ?></option>
+                        <?php endforeach ?>
+                    </select>
+                </div>
 										<div class="ln_solid"></div>
 										<div class="item form-group">
 										<div class="ln_solid"></div>

@@ -8,7 +8,7 @@ class c_pengguna{
 
         $conn = new c_koneksi();
 
-        $sql = "SELECT tb_user.id, tb_user.nama AS user_nama, tb_user.username, tb_outlet.nama AS outlet_nama, tb_user.role FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet,id ORDER BY tb_outlet.nama ASC";
+        $sql = "SELECT tb_user.id, tb_user.nama AS user_nama, tb_user.username, tb_outlet.nama AS outlet_nama, tb_user.role FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id ORDER BY tb_outlet.nama ASC";
 
         $query = mysqli_query($conn->koneksi(), $sql);
 
@@ -20,17 +20,17 @@ class c_pengguna{
         return $hasil;
 }
 
-    function insert($id, $nama, $username, $password,$id_outlet,$role){
+    function insert($id, $nama, $username, $password, $id_outlet, $role){
 
         $conn = new c_koneksi();
 
-        $sql = "INSERT INTO tb_user VALUES ('$id','$nama','$username','$password','$id_outlet','$role)";
+        $sql = "INSERT INTO tb_user VALUES ('$id','$nama','$username','$password','$id_outlet','$role')";
 
         $query = mysqli_query($conn->koneksi(),$sql);
 
 
         if ($query) {
-            echo "<script>alert('Data Berhasil Ditambahkan');window.location='../views/outlet/v_list_pengguna.php'</script>";
+            echo "<script>alert('Data Berhasil Ditambahkan');window.location='../views/pengguna/v_list_pengguna.php'</script>";
          }
 
          else{
