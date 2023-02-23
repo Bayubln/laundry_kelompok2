@@ -2,6 +2,8 @@
 include_once '../template/header.php'; 
 include_once '../template/sidebar.php'; 
 include_once '../template/topbar.php'; 
+include_once  '../../controllers/c_outlet.php'; 
+$outlet= new c_outlet();
 ?>
 
 <!-- page content -->
@@ -35,12 +37,6 @@ include_once '../template/topbar.php';
 											</div>
 										</div>
 										<div class="item form-group">
-											<label for="nama" class="col-form-label col-md-3 col-sm-3 label-align">Nama Pengguna</label>
-											<div class="col-md-6 col-sm-6 ">
-												<input id="nama" class="form-control" type="text" name="nama">
-											</div>
-										</div>
-										<div class="item form-group">
 											<label for="" class="col-form-label col-md-3 col-sm-3 label-align">Username</label>
 											<div class="col-md-6 col-sm-6 ">
 												<input id="" class="form-control" type="text" name="username">
@@ -53,22 +49,28 @@ include_once '../template/topbar.php';
 											</div>
 										</div>
 										<div class="item form-group">
-											<label for="id_outlet" class="col-form-label col-md-3 col-sm-3 label-align">Id Outlet</label>
-											<div class="col-md-6 col-sm-6 ">
-												<input id="" class="form-control" type="text" name="id_outlet">
-											</div>
-										</div>
-										<div class="form-group">
-                    <label>Role</label>
-                    <select name="role" class="form-control">
-                        <?php foreach ($role as $key): ?>
-                            <?php if ($key == $edit['role']): ?>
-                            <option value="<?= $key ?>" selected><?= $key ?></option>    
-                            <?php endif ?>
-                            <option value="<?= $key ?>"><?= ucfirst($key) ?></option>
-                        <?php endforeach ?>
-                    </select>
-                </div>
+								<label for="outlet" class="col-form-label col-md-3 col-sm-3 label-align">Outlet</label>
+								<div class="col-md-6 col-sm-6 ">
+									<select id="outlet" class="form-control" name="id_outlet">
+										<option>Choose option</option>
+										<?php foreach ($outlet->tampil() as $o) { ?>
+												<option value="<?= $o->id ?>"><?= $o->nama ?></option>
+										<?php } ?>
+									</select>
+								</div>
+							</div>
+										
+							<div class="item form-group">
+								<label for="role" class="col-form-label col-md-3 col-sm-3 label-align">Role</label>
+								<div class="col-md-6 col-sm-6 ">
+									<select id="role" class="form-control" name="role">
+										<option>Choose option</option>
+										<option value="admin">Admin</option>
+										<option value="kasir">Kasir</option>
+										<option value="owner">Owner</option>
+									</select>
+								</div>
+							</div>
 										<div class="ln_solid"></div>
 										<div class="item form-group">
 										<div class="ln_solid"></div>

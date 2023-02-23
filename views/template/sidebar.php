@@ -30,7 +30,7 @@
                 <ul class="nav side-menu">                  
                   <li><a href="#"><i class="fa fa-home"></i> Home <span class="label label-success pull-right"></span></a></li>
                 
-                  <li><a href="#"><i class="fa fa-user"></i> Pelanggan  <span class="label label-success pull-right"></span></a></li>
+                  <li><a href="#"><i class="fa fa-user"></i> Registrasi Pelanggan <span class="label label-success pull-right"></span></a></li>
 
                   <li><a><i class="fa fa-group"></i> Pengguna <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
@@ -46,16 +46,16 @@
                     </ul>
                   </li>
 
-                  <li><a href="#"><i class="fa fa-money"></i> Transaksi <span class="label label-success pull-right"></span></a></li>
-
-                  <li><a href="#"><i class="fa fa-group"></i> Registrasi Pelanggan <span class="label label-success pull-right"></span></a></li>
-
                   <li><a><i class="fa fa-edit"></i> Produk <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="../produk/v_list_produk.php">Daftar Produk</a></li>
                       <li><a href="../produk/v_tambah_produk.php">Tambah Produk</a></li>
                     </ul>
                   </li>
+
+                  <li><a href="#"><i class="fa fa-money"></i> Transaksi <span class="label label-success pull-right"></span></a></li>
+
+                  <li><a><i class="fa fa-edit"></i> Generate Laporan <span class="fa fa-chevron-down"></span></a></li>
 
                   <!-- <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">

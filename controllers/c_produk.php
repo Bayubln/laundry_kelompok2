@@ -8,7 +8,7 @@ class c_produk{
 
         $conn = new c_koneksi();
 
-        $sql = "SELECT tb_paket.id, tb_paket.nama AS nama_paket, tb_paket.username, tb_outlet.nama AS outlet_nama, tb_user.role FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id ORDER BY tb_outlet.nama ASC";
+        $sql = "SELECT tb_paket.id, id_outlet, tb_outlet.nama AS outlet_nama, jenis, nama_paket, harga  FROM `tb_paket` JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id";
 
         $query = mysqli_query($conn->koneksi(), $sql);
 
@@ -20,11 +20,11 @@ class c_produk{
         return $hasil;
 }
 
-    function insert($id,$id_outlet,$jenis,$nama_paket,$harga){
+    function insert($id, $outlet, $jenis, $paket, $harga){
 
         $conn = new c_koneksi();
 
-        $sql = "INSERT INTO tb_user VALUES ('$id','$id_outlet','$jenis','$nama_paket','$harga')";
+        $sql = "INSERT INTO tb_paket VALUES ('$id','$outlet','$jenis','$paket','$harga')";
 
         $query = mysqli_query($conn->koneksi(),$sql);
 
@@ -44,7 +44,8 @@ class c_produk{
 
         $conn = new c_koneksi();
         
-        $sql = "SELECT tb_user.id, tb_user.nama AS user_nama, tb_user.username, tb_outlet.nama AS outlet_nama, tb_user.role FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id WHERE tb_user.id=$id";
+        $sql = "SELECT tb_paket.id, id_outlet, tb_outlet.nama AS outlet_nama, jenis, nama_paket, harga  FROM `tb_paket` JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id WHERE tb_paket.id=$id ";
+
         $query = mysqli_query($conn->koneksi(),$sql);
 
         
@@ -57,11 +58,12 @@ class c_produk{
         return $hasil;
     }
 
-    function update($id, $nama, $username, $password,$id_outlet,$role){
+    function update($id, $outlet, $jenis, $paket, $harga){
 
         $conn = new c_koneksi();
 
-        $sql = "UPDATE tb_paket SET  nama='$nama', password='$password', id_outlet='$id_outlet', role=$role WHERE id='$id'";
+        $sql = "UPDATE tb_paket SET  id_outlet='$outlet', jenis='$jenis', nama_paket='$paket', harga='$harga' WHERE id='$id'";
+        // echo var_dump($sql);
 
         $query = mysqli_query($conn->koneksi(), $sql);
         

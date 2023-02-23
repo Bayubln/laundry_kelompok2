@@ -61,14 +61,14 @@ class c_pengguna{
 
         $conn = new c_koneksi();
 
-        $sql = "UPDATE tb_user SET  nama='$nama', password='$password', id_outlet='$id_outlet', role=$role WHERE id='$id'";
+        $sql = "UPDATE tb_user SET  nama='$nama', username='$username', password='$password', id_outlet='$id_outlet', role='$role' WHERE id='$id'";
 
         $query = mysqli_query($conn->koneksi(), $sql);
         
 
         if ($query) {
 
-            echo "<script>alert('Data Berhasil Di Ubah');window.location='../views/outlet/v_list_pengguna.php'</script>";
+            echo "<script>alert('Data Berhasil Di Ubah');window.location='../views/pengguna/v_list_pengguna.php'</script>";
 
          }
 

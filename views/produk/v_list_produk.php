@@ -1,14 +1,22 @@
 <?php 
+session_start();
 include_once '../template/header.php'; 
 include_once '../template/sidebar.php'; 
 include_once '../template/topbar.php'; 
+?>
+<?php 
+include_once '../../controllers/c_outlet.php';
+include_once '../../controllers/c_produk.php';
+
+$outlet = new c_outlet();
+$produk = new c_produk();
 ?>
         <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Tables <small>Some examples to get you started</small></h3>
+                <h3>Daftar Paket</h3>
               </div>
 
               <div class="title_right">
@@ -29,7 +37,7 @@ include_once '../template/topbar.php';
               <div class="col-md-12 col-sm-12  ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Basic Tables <small>basic table subtitle</small></h2>
+                    <h2>Daftar Paket </h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -50,31 +58,34 @@ include_once '../template/topbar.php';
                     <table class="table">
                       <thead>
                         <tr>
-                          <th>#</th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Username</th>
+                          <th>No</th>
+                          <th>Nama Outlet</th>
+                          <th>Nama Paket</th>
+                          <th>Harga</th>
+                          <th><center>Aksi</center></th>
                         </tr>
                       </thead>
                       <tbody>
+                      
+                      <?php 
+                      $no = 1;
+                      foreach ($produk->tampil() as $p) {
+                      ?>
                         <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
+                          <th scope="row"><?= $no++  ?></th>
+                          <td><?= $p->outlet_nama  ?></td>
+                          <td><?= $p->nama_paket  ?></td>
+                          <td><?= $p->harga  ?></td>
+                          <td>
+                            <center>
+                            <a href="v_edit_produk.php?id=<?= $p->id ?>"><button type="button" class="btn btn-round btn-primary">Edit</button></a>
+                            
+                            <a onclick="return confirm('Apakah yakin data akan di hapus?')" href="../../routers/r_produk.php?id=<?= $p->id ?>&aksi=hapus"><button type="button" name="hapus" class="btn btn-round btn-danger">Hapus</button></a>
+                            </center>
+                          </td>
                         </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
+                      <?php } ?>
+
                       </tbody>
                     </table>
 
