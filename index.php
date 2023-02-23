@@ -1,3 +1,7 @@
+<?php 
+include_once 'controllers/C_login.php';
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -21,9 +25,11 @@
               <div class="form-03-main">
                 <div class="logo">
                   <img src="assets/images/qqqqq.png">
+                  <img src="assets/images/laun.gif">
                 </div>
+                <form action="routers/r_login.php?aksi=login" method="post">
                 <div class="form-group">
-                  <input type="email" name="email" class="form-control _ge_de_ol" type="text" placeholder="Enter Email" required="" aria-required="true">
+                  <input type="username" name="username" class="form-control _ge_de_ol" type="text" placeholder="Enter username" required="" aria-required="true">
                 </div>
 
                 <div class="form-group">
@@ -31,10 +37,11 @@
                 </div>
                 <div class="form-group">
                   <div class="_btn_04">
-                    <a href="#">Login</a>
+                    <!-- <a name="login "href="#">Login</a> -->
+                    <input type="submit" name="login" value="login"> 
                   </div>
                 </div>
-
+</form>
     </section>
   </body>
 </html>
