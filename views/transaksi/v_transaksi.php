@@ -7,6 +7,10 @@ include_once '../template/topbar.php';
 
 <?php 
 
+include_once '../../controllers/c_transaksi.php';
+
+$transaksi = new c_transaksi();
+
 ?>
 
 <!-- page content -->
@@ -68,8 +72,43 @@ include_once '../template/topbar.php';
                   </center>
                 </tr>
               </thead>
+              <tbody>
+                <?php 
+                $nomor = 1;
+                foreach ($transaksi->tampil() as $t) { 
+                ?>
+                <tr>
+                  <th scope="row"><?= $nomor++ ?></th>
+                  <td><?= $t->kode_invoice ?></td>
+                  <td><?= $t->member_nama ?></td>
+                  <td><?= $t->tgl ?></td>
+                  <td><?= $t->batas_waktu ?></td>
+                  <td><?= $t->status ?></td>
+                  <td><?= $t->dibayar ?></td>
+                  <td>
+                            <center>
+                            <a href="v_edit_transaksi.php?id=<?= $t->id ?>"><button type="button" class="btn btn-round btn-primary">Edit</button></a>
+                            
+                            <a onclick="return confirm('Apakah yakin data akan di hapus?')" href="../../routers/r_transaksi.php?id=<?= $t->id ?>&aksi=hapus"><button type="button" name="hapus" class="btn btn-round btn-danger">Hapus</button></a>
+                            
+                            <?php if($t->dibayar == 'belum_dibayar'){ ?>
+                            <a href="v_transaksi_bayar.php?id=<?= $t->id ?>"><button type="button" class="btn btn-round btn-warning">Bayar</button></a>
+                            <?php } ?>
+                          </center>
+                          </td>
+                </tr>
+                <?php } ?>
+              </tbody>
             </table>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
   </div>
 </div>
+<!-- /page content -->
 
 <?php include_once '../template/footer.php'; ?>

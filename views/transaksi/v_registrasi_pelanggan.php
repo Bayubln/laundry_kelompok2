@@ -10,7 +10,7 @@ include_once '../template/topbar.php';
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3> Registrasi Pelanggan </small></h3>
+                <h3> Registerasi Pelanggan </small></h3>
             </div>
 
             <div class="title_right">
@@ -32,7 +32,7 @@ include_once '../template/topbar.php';
             <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Form Registerasi Pelanggan</h2>
+                        <h2>Form Registrasi Pelanggan</h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
@@ -87,7 +87,7 @@ include_once '../template/topbar.php';
                             </div>
 
                             <div class="item form-group">
-                                <label for="tlp" class="col-form-label col-md-3 col-sm-3 label-align"> Telepon </label>
+                                <label for="tlp" class="col-form-label col-md-3 col-sm-3 label-align"> Telpon </label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input id="tlp" class="form-control" type="tlp" name="tlp">
                                 </div>
