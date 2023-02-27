@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Feb 2023 pada 07.53
+-- Waktu pembuatan: 27 Feb 2023 pada 02.10
 -- Versi server: 10.3.16-MariaDB
 -- Versi PHP: 7.3.7
 
@@ -50,6 +50,14 @@ CREATE TABLE `tb_member` (
   `tlp` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data untuk tabel `tb_member`
+--
+
+INSERT INTO `tb_member` (`id`, `nama`, `alamat`, `jenis_kelamin`, `tlp`) VALUES
+(1, 'ajul', 'gbr3', 'L', ''),
+(2, 'ajul', 'gbr3', 'L', '');
+
 -- --------------------------------------------------------
 
 --
@@ -68,7 +76,7 @@ CREATE TABLE `tb_outlet` (
 --
 
 INSERT INTO `tb_outlet` (`id`, `nama`, `alamat`, `tlp`) VALUES
-(2, 'anwar', 'jln cibeber', '0896758352382');
+(11, 'Laundry Ajul', 'Cilame', '085678957');
 
 -- --------------------------------------------------------
 
@@ -83,6 +91,14 @@ CREATE TABLE `tb_paket` (
   `nama_paket` varchar(100) NOT NULL,
   `harga` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data untuk tabel `tb_paket`
+--
+
+INSERT INTO `tb_paket` (`id`, `id_outlet`, `jenis`, `nama_paket`, `harga`) VALUES
+(6, 11, '', 'selimut', 30000),
+(7, 11, '', 'baju', 4000);
 
 -- --------------------------------------------------------
 
@@ -103,7 +119,10 @@ CREATE TABLE `tb_transaksi` (
   `pajak` int(11) NOT NULL,
   `status` enum('baru','proses','selesai','diambil') DEFAULT NULL,
   `dibayar` enum('dibayar','belum_dibayar') DEFAULT NULL,
-  `id_user` int(11) NOT NULL
+  `id_user` int(11) NOT NULL,
+  `id_paket` int(11) NOT NULL,
+  `qty` double NOT NULL,
+  `keterangan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -116,10 +135,19 @@ CREATE TABLE `tb_user` (
   `id` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `username` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` text NOT NULL,
   `id_outlet` int(11) NOT NULL,
   `role` enum('admin','kasir','owner') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data untuk tabel `tb_user`
+--
+
+INSERT INTO `tb_user` (`id`, `nama`, `username`, `password`, `id_outlet`, `role`) VALUES
+(18, 'AjulBejul', 'AjulBejul', '$2y$10$hNqCTrKH/rH.6cr1hLDu9.3UyDilZTMlMi9EJ8qPI9jCcx/.vMnh2', 11, 'admin'),
+(19, 'BayBenjiro', 'BayBenjiro', '$2y$10$2wH2vjemzo2WwmMKjyHqK.teMv4MwHPjAchKO7gBgNIEUXW4kr7e2', 11, 'kasir'),
+(20, 'azril', 'azril', '$2y$10$hXINdJCGxyxkuL8K7Q.G6eoV/a/jQVFTGkbPqr.nIu3KptPZpoYJ6', 11, 'owner');
 
 --
 -- Indexes for dumped tables
@@ -184,31 +212,31 @@ ALTER TABLE `tb_detail_transaksi`
 -- AUTO_INCREMENT untuk tabel `tb_member`
 --
 ALTER TABLE `tb_member`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_outlet`
 --
 ALTER TABLE `tb_outlet`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_paket`
 --
 ALTER TABLE `tb_paket`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_transaksi`
 --
 ALTER TABLE `tb_transaksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
