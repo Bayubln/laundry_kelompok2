@@ -5,72 +5,78 @@ session_start();
 
 include_once 'c_koneksi.php';
 
-class C_login 
+class c_login
 {
+
+    // login multi user 
     public function login_role($username = null, $password = null)
     {
-  // untuk mengecek apakah tombol login di tekan atau belum 
-  if (isset($_POST['login'])) {
 
-    $conn = new c_koneksi();
+        //membuat objek baru dari kelas perintah
+        $conn = new c_koneksi();
 
-    //untuk mengambil semua data berdasarkan username yang di inputkan oleh user
-    $sql = "SELECT * FROM tb_user WHERE username='$username'";
+        // untuk mengecek apakah tombol login di tekan atau belum 
+        if (isset($_POST['login'])) {
 
-    // mengeksekusi perintah sql diatas
-    $query = mysqli_query($conn->koneksi(), $sql);
+            //untuk mengambil semua data berdasarkan username yang di inputkan oleh user
+            $sql = "SELECT * FROM tb_user WHERE username='$username'";
 
-    // merubah data menjadi array asosiatif
-    $data = mysqli_fetch_assoc($query);
+            // mengeksekusi perintah sql diatas
+            $query = mysqli_query($conn->koneksi(), $sql);
 
-    //untuk mengecek apakah query select data berhasil atau tidak
-    if ($data) {
-        // mengecek password apakah sama atau tidak antara yang dinputkan oleh user dengan yang ada di database
-        if (password_verify($password, $data['password'])) {
+            // merubah data menjadi array asosiatif
+            $data = mysqli_fetch_assoc($query);
 
-            if ($data['role'] == 'admin') {
+            //untuk mengecek apakah query select data berhasil atau tidak
+            if ($data) {
+                // mengecek password apakah sama atau tidak antara yang dinputkan oleh user dengan yang ada di database
+                if (password_verify($password, $data['password'])) {
 
-                // membuat variabel session yang nantinya akan digunkan pada halaman tampil_data 
-                $_SESSION["data"] = $data;
+                    if ($data['role'] == 'admin') {
 
-                // jika login berhasil maka berpindah kehalaman tampil_data.php 
-                header("Location: ../views/home/v_home_admin.php");
-                exit;
-            } else if ($data['role'] == 'owner') {
+                        // membuat variabel session yang nantinya akan digunkan pada halaman tampil_data 
+                        $_SESSION["data"] = $data;
 
-                // membuat variabel session yang nantinya akan digunkan pada halaman tampil_data 
-                $_SESSION["data"] = $data;
+                        // jika login berhasil maka berpindah kehalaman tampil_data.php 
+                        header("Location: ../views/home/v_home_admin.php");
+                        exit;
+                    } else if ($data['role'] == 'owner') {
 
-                // jika login berhasil maka berpindah kehalaman tampil_data.php 
-                header("Location: ../views/home/v_home_owner.php");
+                        // membuat variabel session yang nantinya akan digunkan pada halaman tampil_data 
+                        $_SESSION["data"] = $data;
 
-                exit;
-            } else if ($data['role'] == 'kasir') {
+                        // jika login berhasil maka berpindah kehalaman tampil_data.php 
+                        header("Location: ../views/home/v_home_owner.php");
 
-                // membuat variabel session yang nantinya akan digunkan pada halaman tampil_data 
-                $_SESSION["data"] = $data;
+                        exit;
+                    } else if ($data['role'] == 'kasir') {
 
-                // jika login berhasil maka berpindah kehalaman tampil_data.php 
-                header("Location: ../views/home/v_home_kasir.php");
+                        // membuat variabel session yang nantinya akan digunkan pada halaman tampil_data 
+                        $_SESSION["data"] = $data;
 
-                exit;
+                        // jika login berhasil maka berpindah kehalaman tampil_data.php 
+                        header("Location: ../views/home/v_home_kasir.php");
+
+                        exit;
+                    }
+                } else {
+
+                    //menampilkan alert login gagal dan tetap berada dihalaman login
+                    echo "<script>alert('Login Gagal !!! Silahkan cek Username dan Password');window.location='index.php'</script>";
+                }
             }
-        } else {
-
-            //menampilkan alert login gagal dan tetap berada dihalaman login
-            echo "<script>alert('Login Gagal !!! Silahkan cek Username dan Password');window.location='index.php'</script>";
         }
-      }
     }
-   }
 
-            public function logout()
-            {
-                session_destroy();
 
-                header ("location:../index.php");
-                exit;
-            } 
+    public function logout()
+    {
+
+        //menghapus sessian 
+        session_destroy();
+
+        // fungsi untuk berpindah kehalaman index.php 
+        header("location: ../index.php");
+        exit;
+    }
 }
-
-      

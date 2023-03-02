@@ -203,7 +203,7 @@ $pelanggan = new c_pelanggan();
 										<option>Choose option</option>
 
 										<?php foreach ($paket->tampil() as $o) { ?>
-											<option value="<?= $o->id ?>"><?= $o->jenis ?></option>
+												<option value="<?= $o->id ?>"><?= $o->nama_paket ?></option>
 										<?php } ?>
 
 									</select>

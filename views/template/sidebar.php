@@ -4,7 +4,7 @@
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
           <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Laundry</span></a>
+            <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Aplikasi Laundry!</span></a>
           </div>
 
           <div class="clearfix"></div>
@@ -12,7 +12,7 @@
           <!-- menu profile quick info -->
           <div class="profile clearfix">
             <div class="profile_pic">
-              <img src="../../assets/images/img.jpg" alt="..." class="">
+              <img src="../../assets/images/mesin.png" alt="..." class="img-circle profile_img">
             </div>
             <div class="profile_info">
               <span>Welcome,</span>
@@ -55,12 +55,17 @@
                       <li><a href="../produk/v_tambah_produk.php">Tambah Produk</a></li>
                     </ul>
                   </li>
-                  <li><a href="../transaksi/v_transaksi.php"><i class="fa fa-money"></i> Transaksi <span class="label label-success pull-right"></span></a></li>
 
+                  <li><a><i class="fa fa-money"></i> Transaksi <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="../transaksi/v_transaksi.php">Daftar Transaksi</a></li>
+                      <li><a href="../transaksi/v_tambah_transaksi.php">Tambah Transaksi</a></li>
+                    </ul>
+                  </li>
 
                   <li><a><i class="fa fa-list"></i> Generate Laporan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="../laporan/v_laporan.php">Laporan</a></li>
+                      <li><a href="../transaksi/v_cetak_transaksi.php">Cetak Transaksi</a></li>
                     </ul>
                   </li>
 
@@ -76,7 +81,7 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
                   <li><a href="../home/v_home_admin.php"><i class="fa fa-home"></i> Home <span class="label label-success pull-right"></span></a></li>
-                  <li><a><i class="fa fa-list"></i> Generate Laporan <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-list"></i> Generet Laporan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="../transaksi/v_cetak_transaksi.php">Cetak Transaksi</a></li>
                     </ul>

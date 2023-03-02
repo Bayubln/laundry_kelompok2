@@ -10,18 +10,7 @@ include_once '../template/topbar.php';
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3> Registerasi Pelanggan </small></h3>
-            </div>
-
-            <div class="title_right">
-                <div class="col-md-5 col-sm-5   form-group pull-right top_search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Go!</button>
-                        </span>
-                    </div>
-                </div>
+                <h3> Registrasi Pelanggan </small></h3>
             </div>
         </div>
 
@@ -89,7 +78,7 @@ include_once '../template/topbar.php';
                             <div class="item form-group">
                                 <label for="tlp" class="col-form-label col-md-3 col-sm-3 label-align"> Telpon </label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input id="tlp" class="form-control" type="tlp" name="tlp">
+                                    <input id="tlp" class="form-control" type="number" name="tlp">
                                 </div>
                             </div>
 

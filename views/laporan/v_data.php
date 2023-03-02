@@ -55,7 +55,7 @@ $pelanggan = new c_pelanggan();
                         <?php
 $no = 1;
 // manampilkan data dari method atau function tampil_data()
-foreach ($transaksi->tampil_data() as $data) {
+foreach ($transaksi->tampil() as $data) {
 ?>
                         <tr>
                             <td scope="col">

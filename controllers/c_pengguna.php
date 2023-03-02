@@ -23,6 +23,13 @@ class c_pengguna{
     function insert($id, $nama, $username, $password, $id_outlet, $role){
 
         $conn = new c_koneksi();
+        $usercheck= mysqli_num_rows(mysqli_query($conn->koneksi(),"SELECT * FROM tb_user WHERE username='$username'"));
+
+        if($usercheck > 0){
+
+            echo "<script>alert('username telah digunakan');window.location='../views/pengguna/v_tambah_pengguna.php'</script>";
+        }else {
+        }
 
         $sql = "INSERT INTO tb_user VALUES ('$id','$nama','$username','$password','$id_outlet','$role')";
 
@@ -93,5 +100,4 @@ class c_pengguna{
     
 
 }
-
 ?>

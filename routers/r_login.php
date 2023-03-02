@@ -1,7 +1,7 @@
 <?php
-include_once '../controllers/C_login.php';
+include_once '../controllers/c_login.php';
 
-$login = new C_login();
+$login = new c_login();
 
 try {
 

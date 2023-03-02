@@ -14,7 +14,7 @@ include_once 'controllers/C_login.php';
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
 
-    <title>Educational Bootstrap 5 Login Page Website Tampalte</title>
+    <title>Login Laundry</title>
   </head>
   <body>
     <section class="form-02-main" style="background-image:url('assets/images/bbb.gif');">
