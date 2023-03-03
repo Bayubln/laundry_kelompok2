@@ -65,7 +65,7 @@
 
                   <li><a><i class="fa fa-list"></i> Generate Laporan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="../transaksi/v_cetak_transaksi.php">Cetak Transaksi</a></li>
+                      <li><a href="../transaksi/v_laporan.php">Cetak Transaksi</a></li>
                     </ul>
                   </li>
 

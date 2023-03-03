@@ -1,51 +1,33 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<?php 
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laporan Transaksi</title>
-      <link rel="icon" type="image/x-icon" href="img/favoicon/icon3.ico">
-</head>
+include_once '../../controllers/c_transaksi.php';
 
-<body>
-    </a>
-    <div class="row">
-        <div class="col-2">
-        </div>
-        <div class="col-8">
-            <br>
-            <center>
-            <?php 
-                            if (isset($_POST['generate'])) {
-                                if (isset($_POST['transaksi'])) { ?>
-                <h1>Laporan Semua Transaksi</h1>
-            </center>
-                <table  border="1" cellspacing="0" cellpadding="10" width="100%">
-                    <center>
-                        <thead>
-                            <tr>
-                                <th scope="col">No</th>
-                                <th scope="col">Kode Invoice</th>
-                                <th scope="col">Tgl Transaksi</th>
-                                <th scope="col">Tgl Pembayaran</th>
-                                <th scope="col">Nama Pelanggan</th>
-                                <th scope="col">Paket</th>
-                                <th scope="col">Qty</th>
-                                <th scope="col">Total</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Pembayaran</th>
-                            </tr>
-                        </thead>
-                    </center>
-                    <tbody>
-                        <?php
-$no = 1;
-// manampilkan data dari method atau function tampil_data()
-foreach ($transaksi->tampil_data() as $data) {
+$transaksi = new c_transaksi();
+
 ?>
-                        <tr>
-                        <tbody>
+
+<html>
+<head>
+    <title>Website Laundry Cuci Bersih</title>
+</head>
+<body>
+ 
+	<center>
+		<h2>DATA LAPORAN TRANSAKSI</h2>
+	</center>
+ 
+	<table border="1" style="width: 100%">
+		<tr>
+			<th width="1%">Nomor</th>
+			<th>Kode Invoice</th>
+			<th>Nama Pelanggan</th>
+            <th>Tanggal masuk</th>
+            <th>Tanggal Pengambilan</th>
+            <th>Status</th>
+			<th width="5%">Bayar</th>
+		</tr>
+        <tbody>
                 <?php 
                 $nomor = 1;
                 foreach ($transaksi->tampil() as $t) { 
@@ -58,20 +40,14 @@ foreach ($transaksi->tampil_data() as $data) {
                   <td><?= $t->batas_waktu ?></td>
                   <td><?= $t->status ?></td>
                   <td><?= $t->dibayar ?></td>
-                        </tr>
-                        <?php }} else {
-                            echo '<script>';
-                            echo 'alert("Pilih Metode Laporan dulu");';
-                            echo 'document.location.href="v_laporan.php"';
-                            echo '</script>';
-                        }}?>
-                    </tbody>
-                </table>
-        </div>
-        <div class="col-2">
-        </div>
-    </div>
-    <script>window.print();</script>
+                </tr>
+                <?php } ?>
+              </tbody>
+	</table>
+ 
+	<script>
+		window.print();
+	</script>
+ 
 </body>
-
 </html>

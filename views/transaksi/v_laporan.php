@@ -18,15 +18,12 @@ $transaksi = new c_transaksi();
   <div class="">
     <div class="page-title">
       <div class="title_left">
-        <h3> Daftar Transaksi </small></h3>
+        <h3> Data Laporan Transaksi </small></h3>
       </div>
 
       <div class="title_right">
-        <div class="col-md-5 col-sm-5   form-group pull-right top_search">
-          <div class="input-group">
-            <span class="input-group-btn">
-            </span>
-          </div>
+        <div class="col-md-3 col-sm-3   form-group pull-right btn btn-secondary">
+        <a href="v_print.php"><button type="button" class="btn btn-secondary">Print</button>
         </div>
       </div>
     </div>
@@ -52,9 +49,6 @@ $transaksi = new c_transaksi();
                   <th>Tanggal Pengambilan</th>
                   <th>Status</th>
                   <th>Bayar</th>
-                  <center>
-                    <th>Aksi</th>
-                  </center>
                 </tr>
               </thead>
               <tbody>
@@ -70,17 +64,6 @@ $transaksi = new c_transaksi();
                   <td><?= $t->batas_waktu ?></td>
                   <td><?= $t->status ?></td>
                   <td><?= $t->dibayar ?></td>
-                  <td>
-                            <center>
-                            <a href="v_edit_transaksi.php?id=<?= $t->id ?>"><button type="button" class="btn btn-round btn-primary">Edit</button></a>
-                            
-                            <a onclick="return confirm('Apakah yakin data akan di hapus?')" href="../../routers/r_transaksi.php?id=<?= $t->id ?>&aksi=hapus"><button type="button" name="hapus" class="btn btn-round btn-danger">Hapus</button></a>
-                            
-                            <?php if($t->dibayar == 'belum_dibayar'){ ?>
-                            <a href="v_transaksi_bayar.php?id=<?= $t->id ?>"><button type="button" class="btn btn-round btn-warning">Bayar</button></a>
-                            <?php } ?>
-                          </center>
-                          </td>
                 </tr>
                 <?php } ?>
               </tbody>
@@ -93,6 +76,5 @@ $transaksi = new c_transaksi();
     </div>
   </div>
 </div>
-<!-- /page content -->
 
 <?php include_once '../template/footer.php'; ?>

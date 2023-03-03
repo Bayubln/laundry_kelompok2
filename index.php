@@ -17,7 +17,7 @@ include_once 'controllers/C_login.php';
     <title>Login Laundry</title>
   </head>
   <body>
-    <section class="form-02-main" style="background-image:url('assets/images/bbb.gif');">
+    <section class="form-02-main" style="background-image:url('assets/images/wiil.jpg');">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
