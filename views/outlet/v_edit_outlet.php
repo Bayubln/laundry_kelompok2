@@ -74,19 +74,19 @@ $outlet = new c_outlet();
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="nama">Nama <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="nama" name="nama" required="required" class="form-control" value="<?= $o->nama ?>">
+												<input type="text" id="nama" name="nama" required="required" required="required" class="form-control" value="<?= $o->nama ?>">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Alamat</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input id="alamat" class="form-control" type="text" name="alamat" value="<?= $o->alamat ?>">
+												<input id="alamat" required="required" class="form-control" type="text" name="alamat" value="<?= $o->alamat ?>">
 											</div>
 										</div>
                                         <div class="item form-group">
 											<label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Telepon</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input id="telepon" class="form-control" type="text" name="telepon" value="<?= $o->tlp ?>">
+												<input id="telepon" required="required" class="form-control" type="text" name="telepon" value="<?= $o->tlp ?>">
 											</div>
 										</div>
 										<div class="ln_solid"></div>

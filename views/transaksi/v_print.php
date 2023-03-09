@@ -17,7 +17,7 @@ $transaksi = new c_transaksi();
 		<h2>DATA LAPORAN TRANSAKSI</h2>
 	</center>
  
-	<table border="1" style="width: 100%">
+	<table border="1" cellspacing="0" cellpadding="10" style="width: 100%">
 		<tr>
 			<th width="1%">Nomor</th>
 			<th>Kode Invoice</th>

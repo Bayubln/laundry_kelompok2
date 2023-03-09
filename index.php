@@ -1,5 +1,19 @@
 <?php 
-include_once 'controllers/C_login.php';
+error_reporting(E_ALL ^ E_NOTICE);  
+session_start();
+
+if($_SESSION['role'] == 'admin'){
+        header("location: views/home/v_home_admin.php");
+        exit;
+    }elseif ($_SESSION['role'] == 'owner'){
+        header("location: views/home/v_home_owner.php");
+        exit;
+    }elseif ($_SESSION['role'] == 'kasir'){
+        header("location: views/home/v_home_kasir.php");
+        exit;
+    }else {
+        echo '';
+    } 
 ?>
 
 <!doctype html>
@@ -24,7 +38,6 @@ include_once 'controllers/C_login.php';
             <div class="_lk_de">
               <div class="form-03-main">
                 <div class="logo">
-                  <img src="assets/images/qqqqq.png">
                   <img src="assets/images/laun.gif">
                 </div>
                 <form action="routers/r_login.php?aksi=login" method="post">
@@ -37,8 +50,8 @@ include_once 'controllers/C_login.php';
                 </div>
                 <div class="form-group">
                   <div class="_btn_04">
-                    <!-- <a name="login "href="#">Login</a> -->
-                    <input type="submit" name="login" value="login"> 
+                    <!--<a name="login " type="submit" value="login">Login</a>-->
+                    <input type="submit" name="login" value="login">
                   </div>
                 </div>
 </form>

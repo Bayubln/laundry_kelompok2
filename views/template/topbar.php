@@ -8,7 +8,7 @@
               <ul class=" navbar-right">
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                   <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/add.jpg" alt=""><?php echo $_SESSION['data']['username'] ?>
+                    <img src="../../assets/images/add.jpg" alt=""><?php echo $_SESSION['data']['username'] ?>
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                     <form action="../../routers/r_login.php?aksi=logout" method="POST">

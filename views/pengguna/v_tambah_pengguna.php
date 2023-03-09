@@ -23,7 +23,7 @@ $outlet= new c_outlet();
             <!-- start form  -->
             <div class="row">
 						<div class="col-md-12 col-sm-12 ">
-										<li><a class="close-link"><i class="fa fa-close"></i></a>
+										
 										</li>
 									</ul>
 									<div class="clearfix"></div>
@@ -40,19 +40,20 @@ $outlet= new c_outlet();
 										<div class="item form-group">
 											<label for="" class="col-form-label col-md-3 col-sm-3 label-align">Username</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input id="" class="form-control" type="text" name="username">
+												<input id="" required="required" class="form-control" type="text" name="username">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="password" class="col-form-label col-md-3 col-sm-3 label-align">Password</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input id="" class="form-control" type="password" name="password">
+												<input id="" required="required" 
+												class="form-control" type="password" name="password">
 											</div>
 										</div>
 										<div class="item form-group">
 								<label for="outlet" class="col-form-label col-md-3 col-sm-3 label-align">Outlet</label>
 								<div class="col-md-6 col-sm-6 ">
-									<select id="outlet" class="form-control" name="id_outlet">
+									<select id="outlet" required="required" class="form-control" name="id_outlet">
 										<option>Choose option</option>
 										<?php foreach ($outlet->tampil() as $o) { ?>
 												<option value="<?= $o->id ?>"><?= $o->nama ?></option>
@@ -64,7 +65,7 @@ $outlet= new c_outlet();
 							<div class="item form-group">
 								<label for="role" class="col-form-label col-md-3 col-sm-3 label-align">Role</label>
 								<div class="col-md-6 col-sm-6 ">
-									<select id="role" class="form-control" name="role">
+									<select id="role" required="required" class="form-control" name="role">
 										<option>Choose option</option>
 										<option value="admin">Admin</option>
 										<option value="kasir">Kasir</option>

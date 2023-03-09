@@ -83,22 +83,10 @@ $pengguna = new c_pengguna();
 							<div class="item form-group">
 								<label for="password" class="col-form-label col-md-3 col-sm-3 label-align">Password</label>
 								<div class="col-md-6 col-sm-6 ">
-									<input id="password" class="form-control" type="password" name="password">
+									<input id="password" required="required" class="form-control" type="password" name="password">
 								</div>
 							</div>
-							<div class="item form-group">
-								<label for="outlet" class="col-form-label col-md-3 col-sm-3 label-align">Outlet</label>
-								<div class="col-md-6 col-sm-6 ">
-									<select id="outlet" class="form-control" name="id_outlet">
-										<option value='<?= $p->outlet_id ?>'><?= $p->outlet_nama ?></option>
 
-										<?php foreach ($outlet->tampil() as $o) { ?>
-												<option value="<?= $o->id ?>"><?= $o->nama ?></option>
-										<?php } ?>
-
-									</select>
-								</div>
-							</div>
 							<div class="item form-group">
 								<label for="role" class="col-form-label col-md-3 col-sm-3 label-align">Role</label>
 								<div class="col-md-6 col-sm-6 ">
@@ -112,6 +100,24 @@ $pengguna = new c_pengguna();
 							</div>
 
                             <?php } ?>
+
+                            <div class="item form-group">
+								<label for="outlet" class="col-form-label col-md-3 col-sm-3 label-align">Outlet</label>
+								<div class="col-md-6 col-sm-6 ">
+									<select id="outlet" class="form-control" name="id_outlet">
+										<option value='<?= $p->outlet_id ?>'><?= $p->outlet_nama ?></option>
+
+										<?php foreach ($outlet->tampil() as $o) { ?>
+												<option value="<?= $o->id ?>"><?= $o->nama ?></option>
+										<?php } ?>
+
+									</select>
+								</div>
+							</div>
+							
+							
+
+
 							<div class="ln_solid"></div>
 							<div class="item form-group">
 								<div class="col-md-6 col-sm-6 offset-md-3">
@@ -131,4 +137,4 @@ $pengguna = new c_pengguna();
 <!-- /page content -->
 
 
-<?php include_once '../template/footer.php'; ?>
+<?php include_once '../template/footer.php'; ?>	

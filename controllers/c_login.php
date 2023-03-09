@@ -7,7 +7,6 @@ include_once 'c_koneksi.php';
 
 class c_login
 {
-
     // login multi user 
     public function login_role($username = null, $password = null)
     {
@@ -36,6 +35,7 @@ class c_login
 
                         // membuat variabel session yang nantinya akan digunkan pada halaman tampil_data 
                         $_SESSION["data"] = $data;
+                        $_SESSION["role"] = $data['role'];
 
                         // jika login berhasil maka berpindah kehalaman tampil_data.php 
                         header("Location: ../views/home/v_home_admin.php");
@@ -44,6 +44,7 @@ class c_login
 
                         // membuat variabel session yang nantinya akan digunkan pada halaman tampil_data 
                         $_SESSION["data"] = $data;
+                        $_SESSION["role"] = $data['role'];
 
                         // jika login berhasil maka berpindah kehalaman tampil_data.php 
                         header("Location: ../views/home/v_home_owner.php");
@@ -53,6 +54,7 @@ class c_login
 
                         // membuat variabel session yang nantinya akan digunkan pada halaman tampil_data 
                         $_SESSION["data"] = $data;
+                        $_SESSION["role"] = $data['role'];
 
                         // jika login berhasil maka berpindah kehalaman tampil_data.php 
                         header("Location: ../views/home/v_home_kasir.php");
@@ -62,8 +64,10 @@ class c_login
                 } else {
 
                     //menampilkan alert login gagal dan tetap berada dihalaman login
-                    echo "<script>alert('Login Gagal !!! Silahkan cek Username dan Password');window.location='index.php'</script>";
+                    echo "<script>alert('Masukkan Username dan Password yang benar!');window.location='../index.php'</script>";
                 }
+            }else{
+                echo "<script>alert('Masukkan Username dan Password yang benar! ');window.location='../index.php'</script>";
             }
         }
     }

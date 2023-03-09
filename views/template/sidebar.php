@@ -1,7 +1,7 @@
 <body class="nav-md">
   <div class="container body">
-    <div class="main_container">
-      <div class="col-md-3 left_col">
+    <div class="main_container" >
+      <div class="col-md-3 left_col"style=" min-height:738px;">
         <div class="left_col scroll-view">
           <div class="navbar nav_title" style="border: 0;">
             <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Aplikasi Laundry!</span></a>
@@ -81,9 +81,9 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
                   <li><a href="../home/v_home_admin.php"><i class="fa fa-home"></i> Home <span class="label label-success pull-right"></span></a></li>
-                  <li><a><i class="fa fa-list"></i> Generet Laporan <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-list"></i> Generate Laporan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="../transaksi/v_cetak_transaksi.php">Cetak Transaksi</a></li>
+                    <li><a href="../transaksi/v_laporan.php">Cetak Transaksi</a></li>
                     </ul>
                   </li>
 
@@ -105,14 +105,14 @@
 
                   <li><a><i class="fa fa-money"></i> Transaksi <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="../transaksi/v_transaksi.php">Daftar Produk</a></li>
-                      <li><a href="../transaksi/v_tambah_transaksi.php">Tambah Produk</a></li>
+                      <li><a href="../transaksi/v_transaksi.php">Daftar transaksi</a></li>
+                      <li><a href="../transaksi/v_tambah_transaksi.php">Tambah transaksi</a></li>
                     </ul>
                   </li>
 
-                  <li><a><i class="fa fa-list"></i> Generet Laporan <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-list"></i> Generate Laporan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="../transaksi/v_cetak_transaksi.php">Cetak Transaksi</a></li>
+                    <li><a href="../transaksi/v_laporan.php">Cetak Transaksi</a></li>
                     </ul>
                   </li>
                 </ul>
