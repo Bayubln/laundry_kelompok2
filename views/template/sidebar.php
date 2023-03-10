@@ -29,7 +29,7 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3>General</h3>
+                <h3>Menu</h3>
                 <ul class="nav side-menu">
                   <li><a href="../home/v_home_admin.php"><i class="fa fa-home"></i> Home <span class="label label-success pull-right"></span></a></li>
 
@@ -78,9 +78,9 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3>General</h3>
+                <h3>Menu</h3>
                 <ul class="nav side-menu">
-                  <li><a href="../home/v_home_admin.php"><i class="fa fa-home"></i> Home <span class="label label-success pull-right"></span></a></li>
+                  <li><a href="../home/v_home_owner.php"><i class="fa fa-home"></i> Home <span class="label label-success pull-right"></span></a></li>
                   <li><a><i class="fa fa-list"></i> Generate Laporan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                     <li><a href="../transaksi/v_laporan.php">Cetak Transaksi</a></li>
@@ -97,9 +97,9 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3>General</h3>
+                <h3>Menu</h3>
                 <ul class="nav side-menu">
-                  <li><a href="../home/v_home_admin.php"><i class="fa fa-home"></i> Home <span class="label label-success pull-right"></span></a></li>
+                  <li><a href="../home/v_home_kasir.php"><i class="fa fa-home"></i> Home <span class="label label-success pull-right"></span></a></li>
 
                   <li><a href="../transaksi/v_registrasi_pelanggan.php"><i class="fa fa-user"></i> Registrasi Pelanggan <span class="label label-success pull-right"></span></a></li>
 
