@@ -59,6 +59,8 @@ $transaksi = new c_transaksi();
               </thead>
               <tbody>
                 <?php 
+                if($transaksi->tampil() == null ){ ?>
+                <?php }else{
                 $nomor = 1;
                 foreach ($transaksi->tampil() as $t) { 
                 ?>
@@ -82,7 +84,7 @@ $transaksi = new c_transaksi();
                           </center>
                           </td>
                 </tr>
-                <?php } ?>
+                <?php }} ?>
               </tbody>
             </table>
           </div>

@@ -22,8 +22,7 @@ $outlet= new c_outlet();
 
             <!-- start form  -->
             <div class="row">
-						<div class="col-md-12 col-sm-12 ">
-										
+						<div class="col-md-12 col-sm-12 ">	
 										</li>
 									</ul>
 									<div class="clearfix"></div>

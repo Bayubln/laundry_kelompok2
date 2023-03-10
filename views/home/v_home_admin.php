@@ -17,7 +17,7 @@ include_once '../template/topbar.php';
     <div class="container  h-100">
       <div class="row justify-content-center align-self-center" data-aos="fade-up">
         <div class="col-lg-6 intro-info order-lg-first order-last" data-aos="zoom-in" data-aos-delay="100">
-          <h2> Selamat datang<br>Dihalaman<span>Admin</span></h2>
+          <h2> Selamat datang   <br>di halaman     <span>Admin</span></h2>
           <div>
             <a href="../outlet/v_tambah_outlet.php" class="btn-get-started scrollto">Get Started</a>
           </div>

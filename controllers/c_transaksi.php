@@ -35,6 +35,8 @@ class c_transaksi
         $conn = new c_koneksi();
 
         $sql = "INSERT INTO tb_transaksi VALUES ('$id', '$id_outlet', '$kode_invoice', '$id_member', '$tgl', '$batas_waktu', '', '', '', '', '$status', '$bayar', '$id_user', '$paket', '$qty', '$ket')";
+        // var_dump($sql);
+        // exit;
 
         $query = mysqli_query($conn->koneksi(), $sql);
 
@@ -44,7 +46,7 @@ class c_transaksi
             echo "<script>alert('Data Berhasil Ditambahkan');window.location='../views/transaksi/v_transaksi.php'</script>";
         } else {
 
-            echo "data gagal ditambahkan";
+            echo "<script>alert('Data gagal Ditambahkan');window.location='../views/transaksi/v_tambah_transaksi.php'</script>";
         }
     }
 
